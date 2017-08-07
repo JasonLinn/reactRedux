@@ -1,11 +1,13 @@
 import React from 'react';
 
-const VideoListItem = ({video}) =>{ //裡面的video=props.video  es6
+const VideoListItem = ({video,onVideoSelect}) =>{ //裡面的video=props.video  es6
     // const video = props.video;
+    const video = props.video;
+    const onVideoSelect = props.onVideoSelect;
     const imageUrl = video.snippet.thumbnails.default.url;
     
     return (
-        <li className="list-group-item">
+        <li onClick={()=>onVideoSelect(video)} className="list-group-item">
             <div className="video-list media">
                 <div className="media-left">
                     <img className="media-object" src={imageUrl}/>
