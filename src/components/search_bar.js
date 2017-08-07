@@ -3,8 +3,22 @@ import React,{Component} from 'react';
 // const Component = React.Component;  
 
 class SearchBar extends Component{
+    constructor(props) { //all classes have constructor 建構式
+        super(props); //綁入父層，可以使用其方法
+
+        this.state = {term:'starting value'}; //初始化state
+    }
     render(){
-        return <input onChange={(event)=>console.log(event.target.value)}/>;
+        // this.state.term = event.target.value; //bad
+        return(
+            <div>
+                <input 
+                    value={this.state.term} 
+                    onChange={(event)=>this.setState({term:event.target.value})}
+                />
+                {/* Value of the input:{this.state.term} */}
+            </div>
+        )
     }
     onInputChange(e){
         
