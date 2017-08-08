@@ -2,8 +2,8 @@ import React from 'react';
 
 const VideoListItem = ({video,onVideoSelect}) =>{ //裡面的video=props.video  es6
     // const video = props.video;
-    const video = props.video;
-    const onVideoSelect = props.onVideoSelect;
+    // const video = props.video;
+    // const onVideoSelect = props.onVideoSelect;
     const imageUrl = video.snippet.thumbnails.default.url;
     
     return (
@@ -16,7 +16,6 @@ const VideoListItem = ({video,onVideoSelect}) =>{ //裡面的video=props.video  
                     <div className="media-heading">{video.snippet.title}</div>
                 </div>
             </div>
-            
         </li>
     )
 }
